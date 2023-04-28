@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Online Store</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,14 +24,23 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
+
+  .jumbotron {
+  background-image: url('https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_960_720.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: 3d2b1f;
+}
+
   </style>
 </head>
 <body>
 
 <div class="jumbotron">
-  <div class="container text-center">
+  <div id="title" class="container text-center">
     <h1>Online Store</h1>
-    <p>Mission, Vission & Values</p>
+    <p>Flowers create beauty...</p>
   </div>
 </div>
 
@@ -48,7 +57,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="{% url "products" %}">Products</a></li>
         <li><a href="#">Deals</a></li>
         <li><a href="#">Stores</a></li>
         <li><a href="#">Contact</a></li>
@@ -60,6 +69,8 @@
     </div>
   </div>
 </nav>
+
+{% block webcontent %} {% endblock %}
 
 <footer class="container-fluid text-center">
   <p>Online Store Copyright</p>

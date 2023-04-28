@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
 
-  {% block webcontent %}
+{% block webcontent %}
 
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
+  <div class="col-sm-9">
+    <div class="row">
       {% for entry in product_entries %}
-      <div class="panel panel-primary">
-        <div class="panel-heading">Flower lovers attention!!!</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 5 flowers and get a gift card</div>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Flower lovers attention!!!</div>
+          <div class="panel-body"><img src="https://cdn.pixabay.com/photo/2018/02/28/21/59/roses-3189198_960_720.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Buy 5 flowers and get a gift card</div>
 
-        <hr>
-        <h2>{{ entry.title }}</h2>
+          <hr>
+          <h2>{{ entry.title }}</h2>
 
-        <br>
-        <p>{{ entry.body }}</p>
+          <br>
+          <p>{{ entry.body }}</p>
+          <br>
 
-        {% endfor %}
+
+          {% endfor %}
+        </div>
       </div>
-    </div>
-
+  </div>
   </div>
 </div>
 
