@@ -10,7 +10,7 @@ def home(requests):
                 'body': 'New breed with excellent color!',
             },
             {
-                'title': 'Roses',
+                'title': 'Black Roses',
                 'body': 'Magic black color!',
             },
             {
