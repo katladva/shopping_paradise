@@ -1,25 +1,30 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from products.models import Product
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+import pdb
 
 # Create your views here.
 
 def home(requests):
-    context = {
-        'product_entries': [
-            {
-                'title': 'Roses',
-                'body': 'New breed with excellent color!',
-            },
-            {
-                'title': 'Black Roses',
-                'body': 'Magic black color!',
-            },
-            {
-                'title': 'Daisy',
-                'body': 'Rustic beauty!',
-            }
-        ]
-    }
-    return render(requests, "home.html", context)
+    recent_products = Product.objects.all()
+    return render(requests, "home.html", {'products': recent_products})
 
-def products(requests):
-    return render(requests, "products.html")
+
+@login_required
+def products(request):
+    #pdb.set_trace()
+    p = Product.objects.filter(author=request.user)
+    return render(request, 'products.html', {'products': p})
+
+
+class ProductCreateView(CreateView):
+    model = Product
+    template_name = 'new_product.html'
+    fields = ['title', 'body']
+    success_url = reverse_lazy('products')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
