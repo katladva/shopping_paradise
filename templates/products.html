@@ -9,15 +9,15 @@
       <div class="panel panel-primary" style="margin: auto; max-width:400px;">
         <div class="panel-heading" style="border: 3d2b1f; text: white;">Flower lovers attention!!!</div>
         <div class="panel-body"><img src="https://cdn.pixabay.com/photo/2018/02/28/21/59/roses-3189198_960_720.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 5 flowers and get a gift card for 50 EUR!</div>
+        <div class="panel-footer">Buy 2 bouquets and get a 20% discount!</div>
 
         <hr>
-        <h2>{{ entry.title }}</h2>
+        <h3 style="text-align: center;">{{ entry.title }}</h3>
 
         <br>
-        <p>{{ entry.text }}</p>
+        <p style="text-align: center;">{{ entry.text }}</p>
         <br>
-        <h6><span class="glyphicon glyphicon-hand-right"></span> Posted by {{entry.author.username}}, {{entry.created_date}} </h6>
+        <h6 style="padding-left: 1em"><span class="glyphicon glyphicon-hand-right"></span> Posted by {{entry.author.username}}, {{entry.created_date}} </h6>
       </div>
     </div>
   {% endfor %}

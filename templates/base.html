@@ -21,12 +21,13 @@
 
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: #333333;
       padding: 25px;
+      color: white;
     }
 
   .jumbotron {
-  background-image: url('https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_960_720.jpg');
+  background-image: url('https://img.freepik.com/free-photo/flowers-twigs-light-background_23-2147749260.jpg?w=1060&t=st=1683359189~exp=1683359789~hmac=3b15949720c3fbf25ff9118737085946b00256bb7a9a329b8f6d1f4ed043f20f');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -76,11 +77,11 @@
 
 {% block content %} {% endblock %}
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center" style="background-color: #333333; color=white;">
   <p>Online Store Copyright</p>
   <form class="form-inline">Get deals:
     <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
+    <button type="button" class="btn btn-outline-dark" style="color: #333">Sign Up</button>
   </form>
 </footer>
 </body>
