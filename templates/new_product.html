@@ -4,8 +4,8 @@
 
 <form action="" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Create" class="btn w-100 btn-success">
+    {{ form.as_p }} <!-- this will copy all fields from the models -->
+    <input type="submit" value="Create"/>
 </form>
 
 

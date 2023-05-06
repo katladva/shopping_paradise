@@ -20,12 +20,12 @@ def products(request):
     return render(request, 'products.html', {'products': p})
 
 
-# class ProductCreateView(CreateView):
-#     model = Post
-#     template_name = 'new_product.html'
-#     fields = ['title', 'body']
-#     success_url = reverse_lazy('products')
-#
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
+class ProductCreateView(CreateView):
+    model = Post
+    template_name = 'new_product.html'
+    fields = ['title', 'body']
+    success_url = reverse_lazy('products')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)

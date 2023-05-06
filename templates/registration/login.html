@@ -1,3 +1,4 @@
+ Section: Design Block
 {% extends 'base.html' %}
 
 {% block content %}
@@ -15,23 +16,81 @@
         {% endif %}
     {% endif %}
 
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>{{ form.username.label_tag }}</td>
-                <td>{{ form.username }}</td>
-            </tr>
-            <tr>
-                <td>{{ form.password.label_tag }}</td>
-                <td>{{ form.password }}</td>
-            </tr>
-        </table>
-        <input type="submit" value="login"/>
-        <input type="hidden" name="next" value="{{ next }}"/>
-    </form>
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('https://img.freepik.com/free-photo/beautiful-fragrance-flowers-glass-white-table_114579-66068.jpg?w=1060&t=st=1683364396~exp=1683364996~hmac=05904fa3e4e15dcc07697efc20adc64724f383c77e5b5434f995a8e2e80afdd6');
+        height: 300px;
+        "></div>
+  <!-- Background image -->
 
-    {# Assumes you setup the password_reset view in your URLconf #}
-    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5 text-center">
+
+      <div class="d-flex justify-content-center">
+        <div class="col-lg-4 col-lg-offset-4">
+          <h2 class="fw-bold mb-5">Sign up now</h2>
+          <form method="post" action="{% url 'login' %}">
+              {% csrf_token %}
+            <table>
+            <!-- Username input -->
+            <div class="form-outline mb-4" style="padding: 10px">
+              <input type="username" id="form3Example3" class="form-control" name="{{form.username.name}}" placeholder="Username" value="{{form.username.value}}"/>
+              <label class="form-label sr-only" for="form3Example3">{{ form.username.label_tag }}</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4" style="padding: 10px">
+              <input type="password" id="form3Example4" class="form-control" name="{{ form.password.name }}" placeholder="{{form.password.label}}"/>
+              <label class="form-label sr-only" for="form3Example4">{{ form.password.label_tag }}</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+              <label class="form-check-label" for="form2Example33">
+                Subscribe to our newsletter
+              </label>
+            </div>
+            </table>
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-secondary btn-block mb-4">
+              Sign up
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
+
+
+
+
+
+<!--        <table>-->
+<!--            <tr>-->
+<!--                <td>{{ form.username.label_tag }}</td>-->
+<!--                <td>{{ form.username }}</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>{{ form.password.label_tag }}</td>-->
+<!--                <td>{{ form.password }}</td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--        <input type="submit" value="login"/>-->
+<!--        <input type="hidden" name="next" value="{{ next }}"/>-->
+<!--    </form>-->
+
+<!--    {# Assumes you setup the password_reset view in your URLconf #}-->
+<!--    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
+
+
