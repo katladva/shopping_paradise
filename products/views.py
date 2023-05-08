@@ -4,6 +4,7 @@ from products.models import Post
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from .forms import PostForm
 import pdb
 
 # Create your views here.
