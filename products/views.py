@@ -4,6 +4,7 @@ from products.models import Post
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+
 from .forms import PostForm
 import pdb
 
@@ -24,9 +25,26 @@ def products(request):
 class ProductCreateView(CreateView):
     model = Post
     template_name = 'new_product.html'
-    fields = ['title', 'body']
+    fields = ['title', 'text', 'price']
     success_url = reverse_lazy('products')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class ProductUpdateView(UpdateView):
+    model = Post
+    template_name = 'update_product.html'
+    fields = ['title', 'text', 'price']
+    success_url = reverse_lazy('products')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class ProductDeleteView(DeleteView):
+    model = Post
+    template_name = 'delete_product.html'
+    context_object_name = 'product'
+    success_url = reverse_lazy('products')

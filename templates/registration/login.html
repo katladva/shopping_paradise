@@ -15,118 +15,69 @@
 {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
 
-<!-- Section: Design Block -->
-<section class="text-center">
-  <!-- Background image -->
-  <div class="p-5 bg-image" style="
-        background-image: url('https://img.freepik.com/free-photo/flowers-wooden-plate-white-table_114579-65939.jpg?w=1060&t=st=1683575984~exp=1683576584~hmac=7a18a0f0a85df7f73e965dde1cfbebd7479d0be94e90edbc4e58735f2e6ab359');
-        height: 300px;
-        "></div>
-  <!-- Background image -->
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
 
-  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
-        margin-top: -100px;
-        background: hsla(0, 0%, 100%, 0.8);
-        backdrop-filter: blur(30px);
-        ">
-    <div class="card-body py-5 px-md-5">
+        <!-- Section: Design Block -->
+        <section class="text-center">
+          <!-- Background image -->
+          <div class="p-5 bg-image" style="
+                background-image: url('https://img.freepik.com/free-photo/flowers-wooden-plate-white-table_114579-65939.jpg?w=1060&t=st=1683575984~exp=1683576584~hmac=7a18a0f0a85df7f73e965dde1cfbebd7479d0be94e90edbc4e58735f2e6ab359');
+                height: 300px;
+                "></div>
+          <!-- Background image -->
 
-      <div class="row d-flex justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="fw-bold mb-5">Sign up now</h2>
+        <div class="container p-3">
 
-            <!-- Username input -->
-            <div class="form-outline mb-4">
-              <input value={{form.username}} id="form3Example3" class="form-control" />
-              <label class="form-label" for="form3Example4">{{ form.username.label_tag }}</label>
+          <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+                margin-top: -100px;
+                background: hsla(0, 0%, 100%, 0.8);
+                backdrop-filter: blur(30px);
+                ">
+            <div class="card-body py-5 px-md-5">
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="fw-bold mb-5">Sign up now</h2>
+
+                   <!-- Username input -->
+
+                    <div class="form-outline mb-4">
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}</td>
+
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                      <label class="form-check-label" for="form2Example33">
+                        Subscribe to our newsletter
+                      </label>
+                    </div>
+
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-secondary w-100 btn-block mb-4">
+                      Sign up
+                    </button>
+
+
+                </div>
+              </div>
             </div>
-
-<!--            <tr>-->
-<!--                <td>-->
-<!--                    <label class="form-label sr-only" for="form3Example3">{{ form.username.label_tag }}</label>-->
-<!--                </td>-->
-<!--                <td>-->
-<!--                    <div class="form-outline mb-4" style="padding: 10px">-->
-<!--                        <input type="username" id="form3Example3" class="form-control" name="{{form.username.name}}" placeholder="Username" value="{{form.username.value}}"/>-->
-<!--                    </div>-->
-<!--                </td>-->
-<!--            </tr>-->
-
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input value={{form.password}} id="form3Example4" class="form-control" />
-              <label class="form-label" for="form3Example4">{{ form.password.label_tag }}</label>
-            </div>
-
-<!--            <tr>-->
-<!--                <td>-->
-<!--                    <label class="form-label sr-only" for="form3Example4">{{ form.password.label_tag }}</label>-->
-<!--                </td>-->
-<!--                <td>-->
-<!--                    <div class="form-outline mb-4" style="padding: 10px">-->
-<!--                        <input type="password" id="form3Example4" class="form-control" name="{{ form.password.name }}" placeholder="{{form.password.label}}"/>-->
-<!--                    </div>-->
-<!--                </td>-->
-<!--            </tr>-->
-
-
-            <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-center mb-4">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-              <label class="form-check-label" for="form2Example33">
-                Subscribe to our newsletter
-              </label>
-            </div>
-
-<!--            <tr>-->
-<!--                <td>-->
-<!--                    <label class="form-check-label" for="form2Example33">-->
-<!--                    Subscribe to our newsletter-->
-<!--                    </label>-->
-<!--                </td>-->
-<!--                <td>-->
-<!--                    <div class="form-check d-flex justify-content-center mb-4">-->
-<!--              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />-->
-<!--                    </div>-->
-<!--                </td>-->
-<!--            </tr>-->
-
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-secondary btn-block mb-4">
-              Sign up
-            </button>
-
-
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-</form>
+        </section>
+    </form>
+
+
 {% endblock %}
-
-
-
-
-
-<!--        <table>-->
-<!--            <tr>-->
-<!--                <td>{{ form.username.label_tag }}</td>-->
-<!--                <td>{{ form.username }}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td>{{ form.password.label_tag }}</td>-->
-<!--                <td>{{ form.password }}</td>-->
-<!--            </tr>-->
-<!--        </table>-->
-<!--        <input type="submit" value="login"/>-->
-<!--        <input type="hidden" name="next" value="{{ next }}"/>-->
-<!--    </form>-->
-
-<!--    {# Assumes you setup the password_reset view in your URLconf #}-->
-<!--    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
-
-
