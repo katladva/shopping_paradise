@@ -71,6 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shopping_paradise.wsgi.application'
 
+LOGIN_REDIRECT_URL = '/products/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -117,9 +119,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/' # it means here you need to go to find static files
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # it means static files will be found in the base directroy >> in the static folder
+
+MEDIA_URL = '/media/' # this is where we find all media files
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # this is going to be a folder where the django uploads the images to
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#test

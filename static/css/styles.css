@@ -8,5 +8,6 @@
 
 .login-image {
   background-image: url("/static/img/sign_up.jpg");
-  max-height: 150px;
+  background-size: cover;
+  background-position:center;
 }
