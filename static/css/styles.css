@@ -1,0 +1,12 @@
+.header-image {
+    background-image: url("/static/img/background.jpg");
+    background-size: 800px 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: 3d2b1f;
+}
+
+.login-image {
+  background-image: url("/static/img/sign_up.jpg");
+  max-height: 150px;
+}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from products.models import Post
+from products.models import Product
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -11,21 +11,21 @@ import pdb
 # Create your views here.
 
 def home(request):
-    recent_products = Post.objects.all().order_by('-created_date')
+    recent_products = Product.objects.all().order_by('-created_date')
     return render(request, "home.html", {'products': recent_products})
 
 
 @login_required
 def products(request):
     #pdb.set_trace()
-    p = Post.objects.filter(author=request.user)
+    p = Product.objects.filter(author=request.user)
     return render(request, 'products.html', {'products': p})
 
 
 class ProductCreateView(CreateView):
-    model = Post
+    model = Product
     template_name = 'new_product.html'
-    fields = ['title', 'text', 'price']
+    fields = ['title', 'text', 'price', 'image']
     success_url = reverse_lazy('products')
 
     def form_valid(self, form):
@@ -33,7 +33,7 @@ class ProductCreateView(CreateView):
         return super().form_valid(form)
 
 class ProductUpdateView(UpdateView):
-    model = Post
+    model = Product
     template_name = 'update_product.html'
     fields = ['title', 'text', 'price']
     success_url = reverse_lazy('products')
@@ -44,7 +44,7 @@ class ProductUpdateView(UpdateView):
 
 
 class ProductDeleteView(DeleteView):
-    model = Post
+    model = Product
     template_name = 'delete_product.html'
     context_object_name = 'product'
     success_url = reverse_lazy('products')
