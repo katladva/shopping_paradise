@@ -17,3 +17,6 @@ urlpatterns = [
     path("delete/<int:pk>", ProductDeleteView.as_view(), name="product_delete"),
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
