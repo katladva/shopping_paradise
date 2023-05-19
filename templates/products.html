@@ -9,10 +9,9 @@
   {% for entry in p %}
     <div class="col-md-4">
       <link rel="stylesheet" href="{% static 'styles.css' %}">
-      <div class="panel panel-primary" style="margin: auto; max-width:400px; padding-top:20px;">
-        <div class="panel-heading" style="border: 3d2b1f; text: white;">Flower lovers attention!!!</div>
-        <div class="panel-body"><img src="{{products.image.url}}" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 2 bouquets and get a 20% discount!</div>
+      <div class="panel panel-primary custom-panel">
+        <div class="panel-heading">Flower lovers attention!!!</div>
+        <div class="panel-body"><img src="{{products.image.url}}" class="img-responsive product-image" alt="Image"></div>
 
         <hr>
         <h3 style="text-align: center;">{{ entry.title }}</h3>

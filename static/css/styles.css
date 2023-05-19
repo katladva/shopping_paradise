@@ -23,3 +23,45 @@
     border-color: #e9ecef;
 }
 
+.custom-panel {
+  margin: auto;
+  max-width: 400px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.panel-heading {
+  background-color: #337ab7;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+/* "Add product" page styling */
+.my-form {
+        margin: 20px;
+        padding: 10px;
+        background-image: url("/static/img/add_product.jpg");
+        background-size: cover;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .my-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }

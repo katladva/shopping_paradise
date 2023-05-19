@@ -21,7 +21,7 @@ class Product(models.Model):
     image = models.ImageField(default='default.jpg', blank=True) # if picture is not uploaded, use this picture as default
 
     def __str__(self):
-        return self.text
+        return self.title
 
     def euro(self):
         return self.price + ' EUR'

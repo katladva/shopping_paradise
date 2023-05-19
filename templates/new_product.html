@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<form action="" method="post">
+<form action="" method="post" class="my-form">
     {% csrf_token %}
     {{ form.as_p }} <!-- this will copy all fields from the models -->
-    <input type="submit" value="Create"/>
+    <input type="submit" value="Create" class="my-button"/>
 </form>
 
+{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
 {% endblock %}
