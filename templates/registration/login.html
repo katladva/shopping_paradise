@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
 {% block content %}
-
 {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
-
 {% if next %}
 {% if user.is_authenticated %}
 <p>Your account doesn't have access to this page. To proceed,
@@ -16,48 +12,34 @@
 <p>Please login to see this page.</p>
 {% endif %}
 {% endif %}
-
-
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
-
         <!-- Section: Design Block -->
         <section class="text-center">
           <!-- Background image -->
             <div class="p-5 bg-image">
-            <img src="{% static 'img/sign_up.jpg' %}" alt="Image" class="login-image">
             </div>
-
           <!-- Background image -->
-
         <div class="container p-3">
-
           <div class="card mx-4 mx-md-5 shadow-5-strong" style="
                 margin-top: -100px;
                 background: hsla(0, 0%, 100%, 0.8);
                 backdrop-filter: blur(30px);
                 ">
             <div class="card-body py-5 px-md-5">
-
               <div class="row d-flex justify-content-center">
                 <div class="col-lg-4">
                   <h2 class="fw-bold mb-5">Sign up now</h2>
-
                    <!-- Username input -->
-
                     <div class="form-outline mb-4">
                         <td>{{ form.username.label_tag }}</td>
                         <td>{{ form.username }}</td>
-
                     </div>
-
                     <!-- Password input -->
                     <div class="form-outline mb-3">
                         <td>{{ form.password.label_tag }}</td>
                         <td>{{ form.password }}</td>
-
                     </div>
-
                     <!-- Checkbox -->
                     <div class="form-check d-flex justify-content-center mb-4">
                       <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
@@ -65,17 +47,12 @@
                         Subscribe to our newsletter
                       </label>
                     </div>
-
-
                     <!-- Submit button -->
                     <div class="text-center">
-
                         <button type="submit" class="btn btn-secondary btn-block mb-4" style="width: 250px; margin-left: auto; margin-right: auto;">
                             Sign up
                         </button>
-
                     </div>
-
                 </div>
               </div>
             </div>
@@ -83,6 +60,4 @@
         </div>
         </section>
     </form>
-
-
 {% endblock %}

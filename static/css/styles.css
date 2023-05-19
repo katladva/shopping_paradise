@@ -1,13 +1,24 @@
 .header-image {
     background-image: url("/static/img/background.jpg");
-    background-size: 800px 400px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: 3d2b1f;
+    background-size: cover;
+    background-position: center;
+
 }
 
-.login-image {
-  background-image: url("/static/img/sign_up.jpg");
-  background-size: cover;
-  background-position:center;
+
+.navbar-light .navbar-brand {
+    color: #e9ecef;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link {
+    color: #e9ecef;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #e9ecef;
+}
+
+.btn-outline-dark {
+    color: #fff;
+    border-color: #e9ecef;
 }
