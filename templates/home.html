@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
+
 {% load static %}
+
 {% block content %}
+
+
 <div class="container px-4 px-lg-5 mt-5">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-12 justify-content-center gx-5 gy-5">
         {% for entry in products %}
         <div class="col-md-4">
+            {% if featured_product and perms.products.can_view_feature_product %}
             <div class="card h-100 ">
                 <div>Flower lovers attention!!!</div>
                 <img class="card-img-top all-images " src=" {{entry.image.url}} ">
@@ -20,6 +25,7 @@
                 <h6 style="padding-left: 1em"><span class="glyphicon glyphicon-hand-right"></span> Posted by
                     {{entry.author.username}}, {{entry.created_date}} </h6>
             </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

@@ -4,6 +4,9 @@ from django.utils import timezone
 # Create your models here.
 
 class Product(models.Model):
+    class Meta:
+        permissions = (("can_view_feature_product", "View feature product"),)
+
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE

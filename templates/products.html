@@ -4,27 +4,33 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
 <div class="row">
 
   {% for entry in products %}
     <div class="col-md-4">
-      <link rel="stylesheet" href="{% static 'styles.css' %}">
-      <div class="panel panel-primary custom-panel">
+      <div class="panel panel-primary custom-panel product-panel">
         <div class="panel-heading">Flower lovers attention!!!</div>
-        <div class="panel-body"><img src="{{products.image.url}}" class="img-responsive product-image" alt="Image"></div>
+        <div class="panel-body">
+          <img src="{{products.image.url}}" class="img-responsive product-image" alt="Image"></div>
 
         <hr>
-        <h3 style="text-align: center;">{{ entry.title }}</h3>
+        <h3 class="title">{{ entry.title }}</h3>
 
         <br>
-        <p style="text-align: center;">{{ entry.text }}</p>
+        <p class="text">{{ entry.text }}</p>
+
         <br>
-        <p style="text-align: center;">{{ entry.euro }}</p>
+        <p class="euro">{{ entry.euro }}</p>
+
         <br>
+
         <a href="{% url 'product_update' entry.pk %}" class="btn btn-secondary">Update</a>
         <a href="{% url 'product_delete' entry.pk %}" class="btn btn-danger">Delete</a>
         <br>
-        <h6 style="padding-left: 1em"> Posted by {{entry.author.username}}, {{entry.created_date}} </h6>
+
+        <h6 class="posted-by"> Posted by {{entry.author.username}}, {{entry.created_date}} </h6>
       </div>
     </div>
   {% endfor %}

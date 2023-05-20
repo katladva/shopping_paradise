@@ -31,7 +31,7 @@
 }
 
 .panel-heading {
-  background-color: #337ab7;
+  background-color: #877485;
   color: white;
   text-align: center;
   padding: 10px;
@@ -45,23 +45,55 @@
 
 /* "Add product" page styling */
 .my-form {
-        margin: 20px;
-        padding: 10px;
-        background-image: url("/static/img/add_product.jpg");
-        background-size: cover;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+    margin: 20px;
+    padding: 10px;
+    background-image: url("/static/img/add_product.jpg");
+    background-size: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-    .my-button {
-        background-color: #a88384;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+.my-button {
+    background-color: #a88384;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ /* "Products" page styling */
+
+ .product-panel {
+    background-color: #f8f9fa;
+    color: #000;
+    padding: 10px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+}
+
+.euro {
+    text-align: center;
+}
+
+.posted-by {
+    padding-left: 1em
+}
+
+
+
